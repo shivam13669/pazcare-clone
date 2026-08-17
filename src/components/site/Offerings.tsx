@@ -2,10 +2,11 @@ import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { offerings } from "./site-data";
 
-const tabs = Object.keys(offerings);
+const tabs: string[] = Object.keys(offerings);
 
 export function Offerings() {
-  const [active, setActive] = useState(tabs[0]);
+  const [active, setActive] = useState<string>(tabs[0] ?? "");
+  const items = offerings[active] ?? [];
 
   return (
     <section id="offerings" className="py-20">
@@ -35,7 +36,7 @@ export function Offerings() {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {offerings[active].map((item) => (
+          {items.map((item) => (
             <a
               key={item.title}
               href="#quote"
