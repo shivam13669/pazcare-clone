@@ -19,6 +19,8 @@
  */
 
 @theme inline {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -59,29 +61,55 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-ink-soft: var(--ink-soft);
+  --color-surface-soft: var(--surface-soft);
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.75rem;
+
+  /* Pazcare brand */
+  --brand: oklch(0.596 0.239 5.5);
+  --brand-foreground: oklch(0.99 0 0);
+  --ink: oklch(0.24 0.13 305);
+  --ink-foreground: oklch(0.985 0.005 300);
+  --ink-soft: oklch(0.33 0.12 305);
+  --surface-soft: oklch(0.975 0.012 320);
+
+  --gradient-hero: linear-gradient(
+    115deg,
+    oklch(0.98 0.035 95) 0%,
+    oklch(0.995 0.004 300) 38%,
+    oklch(0.955 0.035 320) 72%,
+    oklch(0.96 0.03 285) 100%
+  );
+  --gradient-ink: linear-gradient(160deg, oklch(0.24 0.13 305) 0%, oklch(0.17 0.09 300) 100%);
+  --gradient-brand: linear-gradient(90deg, oklch(0.596 0.239 5.5) 0%, oklch(0.52 0.22 320) 100%);
+  --shadow-card: 0 18px 45px -22px oklch(0.24 0.13 305 / 0.35);
+
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.21 0.02 300);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.21 0.02 300);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.21 0.02 300);
+  --primary: oklch(0.596 0.239 5.5);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.015 320);
+  --secondary-foreground: oklch(0.24 0.13 305);
+  --muted: oklch(0.965 0.01 315);
+  --muted-foreground: oklch(0.5 0.03 305);
+  --accent: oklch(0.95 0.03 320);
+  --accent-foreground: oklch(0.24 0.13 305);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.915 0.012 315);
+  --input: oklch(0.915 0.012 315);
+  --ring: oklch(0.596 0.239 5.5);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +168,53 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility bg-hero-gradient {
+  background-image: var(--gradient-hero);
+}
+
+@utility bg-ink-gradient {
+  background-image: var(--gradient-ink);
+}
+
+@utility bg-brand-gradient {
+  background-image: var(--gradient-brand);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility section-x {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 1200px;
+  padding-inline: 1.25rem;
+}
+
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
