@@ -1,24 +1,67 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { TrustedBy } from "@/components/site/TrustedBy";
+import { Offerings } from "@/components/site/Offerings";
+import { WhyChoose } from "@/components/site/WhyChoose";
+import { FeatureBlocks } from "@/components/site/FeatureBlocks";
+import { StatsBand } from "@/components/site/StatsBand";
+import { Compliance } from "@/components/site/Compliance";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Faq } from "@/components/site/Faq";
+import { FinalCta } from "@/components/site/FinalCta";
+import { Footer } from "@/components/site/Footer";
+import { employeeFeatures, heroImageUrl, hrFeatures } from "@/components/site/site-data";
+
+const title = "Pazcare — Employee Insurance & Benefits Platform for India";
+const description =
+  "Group health, term life and accident insurance, corporate wellness and tax-saving benefit wallets — managed digitally on one platform trusted by 2500+ companies.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:image", content: heroImageUrl },
+      { name: "twitter:image", content: heroImageUrl },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <TrustedBy />
+        <Offerings />
+        <WhyChoose />
+        <FeatureBlocks
+          eyebrow="For employees"
+          heading="Accessing employee benefits is now easy and straightforward with the Pazcare app."
+          features={employeeFeatures}
+          ctaLabel="Know more about our platform"
+        />
+        <StatsBand />
+        <FeatureBlocks
+          eyebrow="For HR teams"
+          heading="You take care of people strategies."
+          subheading="We'll take care of your end-to-end benefits management."
+          features={hrFeatures}
+          ctaLabel="Know more about our platform"
+          tone="dark"
+        />
+        <Compliance />
+        <Testimonials />
+        <Faq />
+        <FinalCta />
+      </main>
+      <Footer />
     </div>
   );
 }
