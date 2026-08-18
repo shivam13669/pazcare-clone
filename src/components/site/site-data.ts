@@ -213,6 +213,8 @@ export const certifications = [
 export const newsLogos = [
   { name: "YourStory", src: `${CDN}/6492a54c1371d99bc9b76b59_yourstory.png` },
   { name: "Inc42", src: `${CDN}/6492a54bc475e74ad6eface5_Inc42.webp` },
+  { name: "Entrepreneur India", src: `${CDN}/6492a54be0346cedcf0abcbf_Entrepreneur.png` },
+  { name: "TechCrunch", src: `${CDN}/6492a54d16eed3fa15d63c58_TechCrunch.webp` },
 ];
 
 export const testimonials = [
