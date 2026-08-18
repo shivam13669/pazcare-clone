@@ -5,6 +5,7 @@ import { Hero } from "@/components/site/Hero";
 import { TrustedBy } from "@/components/site/TrustedBy";
 import { Offerings } from "@/components/site/Offerings";
 import { WhyChoose } from "@/components/site/WhyChoose";
+import { WhoFor } from "@/components/site/WhoFor";
 import { FeatureBlocks } from "@/components/site/FeatureBlocks";
 import { StatsBand } from "@/components/site/StatsBand";
 import { Compliance } from "@/components/site/Compliance";
@@ -41,11 +42,13 @@ function Index() {
         <TrustedBy />
         <Offerings />
         <WhyChoose />
+        <WhoFor />
         <FeatureBlocks
           eyebrow="For employees"
           heading="Accessing employee benefits is now easy and straightforward with the Pazcare app."
           features={employeeFeatures}
           ctaLabel="Know more about our platform"
+          tone="dark"
         />
         <StatsBand />
         <FeatureBlocks
@@ -54,7 +57,6 @@ function Index() {
           subheading="We'll take care of your end-to-end benefits management."
           features={hrFeatures}
           ctaLabel="Know more about our platform"
-          tone="dark"
         />
         <Compliance />
         <Testimonials />
