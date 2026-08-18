@@ -9,12 +9,12 @@ export function WhyChoose() {
   return (
     <section className="bg-surface-soft py-20">
       <div className="section-x">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="flex flex-col items-center gap-6 text-center">
           <div>
-            <h2 className="text-3xl font-semibold text-foreground sm:text-[40px]">
+            <h2 className="text-4xl font-semibold text-foreground sm:text-[44px]">
               Why choose Pazcare ?
             </h2>
-            <p className="mt-3 max-w-2xl text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-ink-soft">
               You&rsquo;re choosing flexibility, transparency, and personalization in your employee
               benefits when choosing Pazcare
             </p>
