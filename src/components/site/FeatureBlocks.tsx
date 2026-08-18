@@ -1,4 +1,5 @@
-import { Check } from "lucide-react";
+import { useState } from "react";
+import { Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type Feature = {
@@ -24,81 +25,110 @@ export function FeatureBlocks({
   tone?: "light" | "dark";
 }) {
   const dark = tone === "dark";
+  const [active, setActive] = useState(0);
+  const current = features[active] ?? features[0]!;
 
   return (
-    <section className={dark ? "bg-ink-gradient py-20" : "py-20"}>
+    <section className={dark ? "bg-ink-gradient py-20 lg:py-24" : "py-20 lg:py-24"}>
       <div className="section-x">
         {eyebrow && (
-          <p className="text-sm font-semibold uppercase tracking-wide text-brand">{eyebrow}</p>
+          <p className="text-center text-sm font-semibold uppercase tracking-wide text-brand">
+            {eyebrow}
+          </p>
         )}
         <h2
           className={
-            "mt-3 max-w-3xl text-3xl font-semibold sm:text-[40px] " +
+            "mx-auto mt-3 max-w-4xl text-center text-3xl font-semibold leading-[1.2] sm:text-[42px] " +
             (dark ? "text-ink-foreground" : "text-foreground")
           }
         >
           {heading}
         </h2>
         {subheading && (
-          <p className={"mt-4 max-w-2xl " + (dark ? "text-ink-foreground/75" : "text-muted-foreground")}>
+          <p
+            className={
+              "mx-auto mt-4 max-w-3xl text-center text-3xl font-semibold leading-[1.2] sm:text-[42px] " +
+              (dark ? "text-ink-foreground" : "text-foreground")
+            }
+          >
             {subheading}
           </p>
         )}
 
-        <div className="mt-12 space-y-10">
-          {features.map((feature, i) => (
-            <div
-              key={feature.title}
-              className={
-                "grid items-center gap-8 rounded-[2rem] p-8 lg:grid-cols-2 lg:p-12 " +
-                (dark ? "bg-ink-foreground/5 backdrop-blur" : "bg-surface-soft") +
-                (i % 2 === 1 ? " lg:[&>*:first-child]:order-2" : "")
-              }
-            >
-              <div>
-                <h3
+        <div className="mt-14 flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
+          <div className="w-full lg:w-1/2">
+            {features.map((feature, i) => {
+              const open = i === active;
+              return (
+                <div
+                  key={feature.title}
                   className={
-                    "text-2xl font-semibold sm:text-3xl " + (dark ? "text-ink-foreground" : "text-ink")
+                    "border-t py-8 " + (dark ? "border-ink-foreground/15" : "border-border")
                   }
                 >
-                  {feature.title}
-                </h3>
-                <p className={"mt-3 " + (dark ? "text-ink-foreground/75" : "text-muted-foreground")}>
-                  {feature.description}
-                </p>
-                {feature.bullets.length > 0 && (
-                  <ul className="mt-6 space-y-3">
-                    {feature.bullets.map((bullet) => (
-                      <li
-                        key={bullet}
-                        className={
-                          "flex items-center gap-3 text-[15px] " +
-                          (dark ? "text-ink-foreground/90" : "text-ink-soft")
-                        }
-                      >
-                        <span className="flex size-5 items-center justify-center rounded-full bg-brand text-brand-foreground">
-                          <Check className="size-3" />
-                        </span>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-              <img
-                src={feature.image}
-                alt={feature.title}
-                className="w-full rounded-2xl object-contain"
-                loading="lazy"
-              />
+                  <button
+                    onClick={() => setActive(i)}
+                    className="flex w-full cursor-pointer items-start justify-between gap-6 text-left"
+                  >
+                    <h3
+                      className={
+                        "text-2xl font-medium " + (dark ? "text-ink-foreground" : "text-ink")
+                      }
+                    >
+                      {feature.title}
+                    </h3>
+                    <ChevronDown
+                      className={
+                        "mt-1 size-5 shrink-0 text-brand transition-transform " +
+                        (open ? "rotate-180" : "")
+                      }
+                    />
+                  </button>
+                  <p
+                    className={
+                      "mt-3 text-[17px] " +
+                      (dark ? "text-ink-foreground/75" : "text-ink-soft")
+                    }
+                  >
+                    {feature.description}
+                  </p>
+                  {open && feature.bullets.length > 0 && (
+                    <ul className="mt-5 space-y-3">
+                      {feature.bullets.map((bullet) => (
+                        <li
+                          key={bullet}
+                          className={
+                            "flex items-center gap-3 text-[15px] " +
+                            (dark ? "text-ink-foreground/90" : "text-ink-soft")
+                          }
+                        >
+                          <span className="flex size-5 items-center justify-center rounded-full bg-[oklch(0.55_0.14_155)] text-white">
+                            <Check className="size-3" />
+                          </span>
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              );
+            })}
+            <div className={"border-t " + (dark ? "border-ink-foreground/15" : "border-border")} />
+            <div className="mt-10">
+              <Button variant={dark ? "onDark" : "brand"} size="pill" asChild>
+                <a href="#quote">{ctaLabel}</a>
+              </Button>
             </div>
-          ))}
-        </div>
+          </div>
 
-        <div className="mt-12">
-          <Button variant={dark ? "onDark" : "brand"} size="pill" asChild>
-            <a href="#quote">{ctaLabel}</a>
-          </Button>
+          <div className="w-full lg:w-1/2">
+            <img
+              src={current.image}
+              alt={current.title}
+              className="w-full rounded-2xl object-contain"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </section>

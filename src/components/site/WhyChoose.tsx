@@ -1,66 +1,46 @@
-import { useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { whySlides } from "./site-data";
 
-export function WhyChoose() {
-  const [index, setIndex] = useState(0);
-  const slide = whySlides[index]!;
+const tints = [
+  "bg-[oklch(0.93_0.05_150)]",
+  "bg-[oklch(0.91_0.04_300)]",
+  "bg-[oklch(0.91_0.03_255)]",
+  "bg-[oklch(0.94_0.06_85)]",
+];
 
+export function WhyChoose() {
   return (
-    <section className="bg-surface-soft py-20">
+    <section className="bg-surface-soft py-20 lg:py-24">
       <div className="section-x">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="flex flex-col items-center gap-6 text-center">
           <div>
-            <h2 className="text-3xl font-semibold text-foreground sm:text-[40px]">
+            <h2 className="text-4xl font-semibold text-foreground sm:text-[44px]">
               Why choose Pazcare ?
             </h2>
-            <p className="mt-3 max-w-2xl text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-ink-soft">
               You&rsquo;re choosing flexibility, transparency, and personalization in your employee
               benefits when choosing Pazcare
             </p>
           </div>
-          <div className="flex gap-3">
-            <button
-              aria-label="Previous slide"
-              onClick={() => setIndex((i) => (i - 1 + whySlides.length) % whySlides.length)}
-              className="cursor-pointer rounded-full border border-border bg-card p-3 text-ink transition-colors hover:bg-brand hover:text-brand-foreground"
-            >
-              <ArrowLeft className="size-4" />
-            </button>
-            <button
-              aria-label="Next slide"
-              onClick={() => setIndex((i) => (i + 1) % whySlides.length)}
-              className="cursor-pointer rounded-full border border-border bg-card p-3 text-ink transition-colors hover:bg-brand hover:text-brand-foreground"
-            >
-              <ArrowRight className="size-4" />
-            </button>
-          </div>
         </div>
 
-        <div className="mt-10 grid items-center gap-10 rounded-[2rem] border border-border bg-card p-8 shadow-card lg:grid-cols-2 lg:p-12">
-          <div>
-            <h3 className="text-2xl font-semibold text-ink sm:text-3xl">{slide.title}</h3>
-            <p className="mt-4 text-muted-foreground">{slide.description}</p>
-            <div className="mt-8 flex gap-2">
-              {whySlides.map((s, i) => (
-                <button
-                  key={s.title}
-                  aria-label={`Go to slide ${i + 1}`}
-                  onClick={() => setIndex(i)}
-                  className={
-                    "h-1.5 cursor-pointer rounded-full transition-all " +
-                    (i === index ? "w-10 bg-brand" : "w-5 bg-border")
-                  }
-                />
-              ))}
-            </div>
-          </div>
-          <img
-            src={slide.image}
-            alt={slide.title}
-            className="w-full rounded-2xl object-cover"
-            loading="lazy"
-          />
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {whySlides.map((slide, i) => (
+            <article
+              key={slide.title}
+              className={
+                "flex flex-col rounded-3xl p-7 pb-0 text-center " + (tints[i % tints.length] ?? "")
+              }
+            >
+              <h3 className="text-xl font-semibold leading-snug text-ink">{slide.title}</h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{slide.description}</p>
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="mt-6 w-full rounded-t-2xl object-cover"
+                loading="lazy"
+              />
+            </article>
+          ))}
         </div>
       </div>
     </section>
