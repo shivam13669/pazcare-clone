@@ -7,8 +7,10 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/95 backdrop-blur">
-      <div className="section-x flex h-[68px] items-center justify-between gap-6">
+    <>
+      <div className="h-9 w-full bg-ink" />
+      <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/95 backdrop-blur">
+      <div className="section-x flex h-[68px] items-center gap-6">
         <a href="/" className="flex shrink-0 items-center">
           <img src={logoUrl} alt="Pazcare logo" className="h-7 w-auto" />
         </a>
@@ -35,7 +37,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="ml-auto hidden items-center gap-6 lg:flex">
           <a href="#login" className="text-[15px] font-medium text-foreground/85 hover:text-brand">
             Login
           </a>
@@ -47,7 +49,7 @@ export function Navbar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="cursor-pointer rounded-md p-2 text-foreground lg:hidden"
+          className="ml-auto cursor-pointer rounded-md p-2 text-foreground lg:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
@@ -74,6 +76,7 @@ export function Navbar() {
           </div>
         </div>
       )}
-    </header>
+      </header>
+    </>
   );
 }
