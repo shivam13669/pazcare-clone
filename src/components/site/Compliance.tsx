@@ -37,15 +37,19 @@ export function Compliance() {
           <h3 className="text-center text-3xl font-semibold text-foreground sm:text-[38px]">
             Pazcare in the news
           </h3>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-14">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
             {newsLogos.map((logo) => (
-              <img
+              <div
                 key={logo.name}
-                src={logo.src}
-                alt={`${logo.name} coverage of Pazcare`}
-                className="h-10 w-auto object-contain"
-                loading="lazy"
-              />
+                className="flex h-[86px] w-[170px] items-center justify-center rounded-2xl border border-border bg-card px-6"
+              >
+                <img
+                  src={logo.src}
+                  alt={`${logo.name} coverage of Pazcare`}
+                  className="max-h-10 w-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
             ))}
           </div>
         </div>
