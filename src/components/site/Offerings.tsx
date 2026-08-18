@@ -4,55 +4,69 @@ import { offerings } from "./site-data";
 
 const tabs: string[] = Object.keys(offerings);
 
+const cardTints = [
+  "bg-[oklch(0.93_0.05_150)]",
+  "bg-[oklch(0.91_0.03_255)]",
+  "bg-[oklch(0.94_0.06_95)]",
+  "bg-[oklch(0.92_0.03_20)]",
+];
+
 export function Offerings() {
   const [active, setActive] = useState<string>(tabs[0] ?? "");
   const items = offerings[active] ?? [];
 
   return (
-    <section id="offerings" className="py-20">
-      <div className="section-x">
-        <p className="text-sm font-semibold uppercase tracking-wide text-brand">
-          We&rsquo;ve got everything in employee benefits.
-        </p>
-        <h2 className="mt-3 max-w-2xl text-3xl font-semibold text-foreground sm:text-[40px]">
-          Create a holistic benefits program by curating from our offerings.
-        </h2>
+    <section id="offerings" className="py-20 lg:py-24">
+      <div className="section-x flex flex-col gap-12 lg:flex-row lg:gap-16">
+        <div className="w-full lg:w-[36%]">
+          <h2 className="text-4xl font-semibold leading-[1.15] text-foreground sm:text-[44px]">
+            We&rsquo;ve got everything in employee benefits.
+          </h2>
+          <p className="mt-5 max-w-sm text-[17px] leading-relaxed text-ink-soft">
+            Create a holistic benefits program by curating from our offerings.
+          </p>
 
-        <div className="mt-10 inline-flex flex-wrap gap-2 rounded-full bg-muted p-1.5">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActive(tab)}
-              className={
-                "cursor-pointer rounded-full px-6 py-2.5 text-sm font-semibold transition-colors " +
-                (active === tab
-                  ? "bg-brand text-brand-foreground"
-                  : "text-ink-soft hover:text-brand")
-              }
-            >
-              {tab}
-            </button>
-          ))}
+          <div className="mt-10 flex max-w-[420px] flex-col gap-4">
+            {tabs.map((tab) => {
+              const isActive = active === tab;
+              const [first, ...rest] = tab.replace("Paz ", "Paz|").split("|");
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setActive(tab)}
+                  className={
+                    "cursor-pointer rounded-full border px-8 py-5 text-left text-2xl transition-colors " +
+                    (isActive
+                      ? "border-ink bg-ink text-ink-foreground"
+                      : "border-border bg-card text-ink hover:border-brand")
+                  }
+                >
+                  <span className="font-bold">{first?.toLowerCase()}</span>{" "}
+                  <span className="font-light">{rest.join(" ").toLowerCase()}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((item) => (
+        <div className="grid w-full gap-6 sm:grid-cols-2 lg:w-[64%]">
+          {items.map((item, i) => (
             <a
               key={item.title}
               href="#quote"
-              className="group flex flex-col justify-between rounded-3xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-card"
+              className={
+                "group relative flex min-h-[250px] flex-col rounded-3xl p-8 transition-all hover:-translate-y-1 " +
+                (cardTints[i % cardTints.length] ?? "")
+              }
             >
-              <div>
-                <img src={item.icon} alt="" className="h-12 w-12" loading="lazy" />
-                <h3 className="mt-5 text-lg font-semibold text-ink">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <ArrowUpRight className="absolute right-6 top-6 size-5 text-ink transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <h3 className="max-w-[75%] text-2xl font-medium leading-snug text-ink">{item.title}</h3>
+              <div className="mt-5 flex items-end justify-between gap-4">
+                <p className="max-w-[60%] text-[15px] leading-relaxed text-ink-soft">
                   {item.description}
                 </p>
+                <img src={item.icon} alt="" className="h-16 w-16 shrink-0" loading="lazy" />
               </div>
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand">
-                Know more
-                <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-              </span>
             </a>
           ))}
         </div>
