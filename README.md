@@ -1,6 +1,6 @@
 # 360 Biz Health Clone
 
-clone this: https://www.pazcare.com/ same to same clone
+Rebranded from the original design to 360 Biz Health.
 
 This project was built with [Lovable](https://lovable.dev).
 
