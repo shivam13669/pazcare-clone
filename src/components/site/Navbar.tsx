@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { logoUrl, navItems } from "./site-data";
+import { Logo } from "./Logo";
+import { navItems } from "./site-data";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
