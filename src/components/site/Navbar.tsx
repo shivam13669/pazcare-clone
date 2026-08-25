@@ -37,7 +37,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="ml-auto hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           <a href="#login" className="text-[15px] font-medium text-foreground/85 hover:text-brand">
             Login
           </a>
