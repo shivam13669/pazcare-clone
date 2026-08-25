@@ -29,7 +29,7 @@ export function Footer() {
 
         <div className="mt-16 grid gap-10 border-t border-ink-foreground/15 pt-10 lg:grid-cols-3">
           <div>
-            <img src={footerLogoUrl} alt="360 Biz Health" className="h-8 w-auto" loading="lazy" />
+            <Logo variant="light" className="h-8 w-auto" />
             <div className="mt-5 flex gap-4">
               {[Facebook, Instagram, Linkedin, Twitter].map((Icon, i) => (
                 <a
