@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { certifications, footerColumns, footerLogoUrl } from "./site-data";
+import { Logo } from "./Logo";
+import { certifications, footerColumns } from "./site-data";
 
 export function Footer() {
   return (
