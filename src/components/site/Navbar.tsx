@@ -9,13 +9,19 @@ export function Navbar() {
 
   return (
     <>
+      <div className="flex h-9 w-full items-center justify-center gap-2 bg-ink px-4 text-center text-sm text-ink-foreground">
+        <span>A strategic framework for Corporate Health Checkup</span>
+        <a href="#quote" className="font-semibold text-[oklch(0.82_0.13_80)] hover:underline">
+          Download Now
+        </a>
+      </div>
       <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/95 backdrop-blur">
       <div className="section-x flex h-[68px] items-center gap-6">
         <a href="/" className="flex shrink-0 items-center">
           <Logo variant="dark" className="h-7 w-auto" />
         </a>
 
-        <nav className="ml-auto hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <div key={item.label} className="group relative">
               <button className="flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 text-[15px] font-medium text-foreground/85 transition-colors hover:text-brand">
@@ -37,7 +43,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="ml-auto hidden items-center gap-6 lg:flex">
           <a href="#login" className="text-[15px] font-medium text-foreground/85 hover:text-brand">
             Login
           </a>
