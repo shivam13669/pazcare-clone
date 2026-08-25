@@ -5,7 +5,7 @@ export function TrustedBy() {
     <section className="bg-ink-gradient py-20">
       <div className="section-x">
         <h2 className="mx-auto max-w-3xl text-center text-2xl font-semibold leading-snug text-ink-foreground sm:text-[34px]">
-          2500+ top companies in India trust Pazcare for their Employee Insurance &amp; Benefits
+          2500+ top companies in India trust 360 Biz Health for their Employee Insurance &amp; Benefits
         </h2>
       </div>
 

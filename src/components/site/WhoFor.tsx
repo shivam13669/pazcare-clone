@@ -6,7 +6,7 @@ export function WhoFor() {
     <section className="py-20 lg:py-24">
       <div className="section-x text-center">
         <h2 className="text-4xl font-semibold text-foreground sm:text-[44px]">
-          Who is Pazcare for?
+          Who is 360 Biz Health for?
         </h2>
         <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-ink sm:text-2xl">
           Perfect for <strong className="font-semibold">people leaders, CXOs, and founders</strong>{" "}

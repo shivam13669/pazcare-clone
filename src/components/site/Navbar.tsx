@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { logoUrl, navItems } from "./site-data";
+import { Logo } from "./Logo";
+import { navItems } from "./site-data";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ export function Navbar() {
       <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/95 backdrop-blur">
       <div className="section-x flex h-[68px] items-center gap-6">
         <a href="/" className="flex shrink-0 items-center">
-          <img src={logoUrl} alt="Pazcare logo" className="h-7 w-auto" />
+          <Logo variant="dark" className="h-7 w-auto" />
         </a>
 
         <nav className="hidden items-center gap-1 lg:flex">

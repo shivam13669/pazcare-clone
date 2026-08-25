@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pazcare — Employee Insurance & Benefits" },
+      { title: "360 Biz Health — Employee Insurance & Benefits" },
       {
         name: "description",
         content:
           "Comprehensive benefits, uncomplicated experience. Employee insurance, wellness and benefits on one platform.",
       },
-      { name: "author", content: "Pazcare" },
-      { property: "og:title", content: "Pazcare — Employee Insurance & Benefits" },
+      { name: "author", content: "360 Biz Health" },
+      { property: "og:title", content: "360 Biz Health — Employee Insurance & Benefits" },
       {
         property: "og:description",
         content:
@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@getpazcare" },
+      { name: "twitter:site", content: "@get360bizhealth" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

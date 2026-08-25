@@ -35,7 +35,7 @@ export function Compliance() {
 
         <div className="mt-16">
           <h3 className="text-center text-3xl font-semibold text-foreground sm:text-[38px]">
-            Pazcare in the news
+            360 Biz Health in the news
           </h3>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
             {newsLogos.map((logo) => (
@@ -45,7 +45,7 @@ export function Compliance() {
               >
                 <img
                   src={logo.src}
-                  alt={`${logo.name} coverage of Pazcare`}
+                  alt={`${logo.name} coverage of 360 Biz Health`}
                   className="max-h-10 w-auto object-contain"
                   loading="lazy"
                 />

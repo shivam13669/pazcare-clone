@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { certifications, footerColumns, footerLogoUrl } from "./site-data";
+import { Logo } from "./Logo";
+import { certifications, footerColumns } from "./site-data";
 
 export function Footer() {
   return (
@@ -28,13 +29,13 @@ export function Footer() {
 
         <div className="mt-16 grid gap-10 border-t border-ink-foreground/15 pt-10 lg:grid-cols-3">
           <div>
-            <img src={footerLogoUrl} alt="Pazcare" className="h-8 w-auto" loading="lazy" />
+            <Logo variant="light" className="h-8 w-auto" />
             <div className="mt-5 flex gap-4">
               {[Facebook, Instagram, Linkedin, Twitter].map((Icon, i) => (
                 <a
                   key={i}
                   href="#social"
-                  aria-label="Pazcare social profile"
+                  aria-label="360 Biz Health social profile"
                   className="rounded-full border border-ink-foreground/25 p-2 transition-colors hover:bg-ink-foreground/10"
                 >
                   <Icon className="size-4" />
@@ -52,7 +53,7 @@ export function Footer() {
             <p className="text-sm font-semibold uppercase tracking-wide text-brand">Paz Helpdesk</p>
             <div className="mt-4 space-y-2 text-sm text-ink-foreground/80">
               <p>+91 80378 34753</p>
-              <p>support@pazcare.com</p>
+              <p>support@360bizhealth.com</p>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-6">
               {certifications.map((cert) => (
@@ -89,7 +90,7 @@ export function Footer() {
         </div>
 
         <p className="border-t border-ink-foreground/15 py-8 text-center text-xs text-ink-foreground/50">
-          Pazcare — Comprehensive Benefits, Uncomplicated Experience.
+          360 Biz Health — Comprehensive Benefits, Uncomplicated Experience.
         </p>
       </div>
     </footer>
