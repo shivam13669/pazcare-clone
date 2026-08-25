@@ -1,7 +1,5 @@
 const CDN = "https://cdn.prod.website-files.com/6145f7146a1337faae24d53f";
 
-export const logoUrl = `${CDN}/642e93d94ccdf8a321436907_logo%20paz.svg`;
-export const footerLogoUrl = `${CDN}/64895ffa7442a2bef79ee408_pazcare-logo-text.svg`;
 export const heroImageUrl = `${CDN}/68a4787a0319cb6ac84f3eae_HomePage_Image.webp`;
 
 export const navItems = [
