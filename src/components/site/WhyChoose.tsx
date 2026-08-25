@@ -14,11 +14,11 @@ export function WhyChoose() {
         <div className="flex flex-col items-center gap-6 text-center">
           <div>
             <h2 className="text-4xl font-semibold text-foreground sm:text-[44px]">
-              Why choose Pazcare ?
+              Why choose 360 Biz Health ?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-ink-soft">
               You&rsquo;re choosing flexibility, transparency, and personalization in your employee
-              benefits when choosing Pazcare
+              benefits when choosing 360 Biz Health
             </p>
           </div>
         </div>

@@ -44,7 +44,7 @@ export function Hero() {
         <div className="relative w-full lg:w-[42%] lg:pl-6">
           <img
             src={heroImageUrl}
-            alt="Pazcare employee benefits dashboard on a tablet and mobile app"
+            alt="360 Biz Health employee benefits dashboard on a tablet and mobile app"
             className="w-full"
             loading="eager"
           />

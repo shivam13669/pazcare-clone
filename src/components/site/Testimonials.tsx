@@ -54,7 +54,7 @@ export function Testimonials() {
       <section className="py-20 lg:py-24">
         <div className="section-x">
           <h2 className="text-center text-3xl font-semibold text-foreground sm:text-[40px]">
-            Read personal stories from Pazcare users!
+            Read personal stories from 360 Biz Health users!
           </h2>
           <div className="mx-auto mt-12 max-w-4xl space-y-6">
             {userStories.map((story) => (

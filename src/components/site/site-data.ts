@@ -162,7 +162,7 @@ export const employeeFeatures = [
     image: `${CDN}/685a5dcc571157d3c536acd1_Emp-feature-claims-WebP.webp`,
   },
   {
-    title: 'Pazcare "Care Crew"',
+    title: '360 Biz Health "Care Crew"',
     description: "We're here for you anytime, anywhere.",
     bullets: ["24X7 support", "Whatsapp chatbot"],
     image: `${CDN}/685a5dcc3c7d07e3567141d8_Emp-feature-care-WebP.webp`,
@@ -226,7 +226,7 @@ export const testimonials = [
     avatar: `${CDN}/68593306c2c2984847884e60_test-Nikunj-webP.webp`,
   },
   {
-    quote: "The attention to detail and response time of Pazcare has made us their customer for life.",
+    quote: "The attention to detail and response time of 360 Biz Health has made us their customer for life.",
     name: "Supriya Paul",
     role: "CEO, Josh Talks",
     avatar: `${CDN}/68593306fad464defbcd2d13_test-Supriya-webP.webp`,
@@ -249,7 +249,7 @@ export const userStories = [
   },
   {
     name: "Onkar Ghone",
-    role: "Pazcare member",
+    role: "360 Biz Health member",
     avatar: `${CDN}/6859314bbd543e80ea606e99_customer-OG-WebP.webp`,
     text: "Exceptional claim reimbursement experience ever. I was impressed with their dedication and commitment to ensuring that my application was processed as quickly as possible. Mr. Prem Gupta went the extra mile to help me get my claim reimbursement.",
   },
@@ -257,24 +257,24 @@ export const userStories = [
 
 export const faqs = [
   {
-    q: "How is Pazcare different from traditional group insurance?",
-    a: "Pazcare combines insurance, wellness, tax benefits, and support in one unified platform with a digital-first UX.",
+    q: "How is 360 Biz Health different from traditional group insurance?",
+    a: "360 Biz Health combines insurance, wellness, tax benefits, and support in one unified platform with a digital-first UX.",
   },
   {
-    q: "Why should companies choose Pazcare for group health insurance and wellness solutions?",
-    a: "Pazcare offers tailored group health insurance plans with features like day-one coverage, mental health consultations, and telemedicine. Their integrated platform helps HR teams manage employee well-being programs efficiently and improve workforce engagement.",
+    q: "Why should companies choose 360 Biz Health for group health insurance and wellness solutions?",
+    a: "360 Biz Health offers tailored group health insurance plans with features like day-one coverage, mental health consultations, and telemedicine. Their integrated platform helps HR teams manage employee well-being programs efficiently and improve workforce engagement.",
   },
   {
-    q: "Does Pazcare provide technical and claim support for group health insurance?",
-    a: "Pazcare offers 24/7 customer support. If you face any difficulty or need support, we have 24x7 human-assisted chat support on WhatsApp/email (support@pazcare.com) and on calls (+91-8037834753).",
+    q: "Does 360 Biz Health provide technical and claim support for group health insurance?",
+    a: "360 Biz Health offers 24/7 customer support. If you face any difficulty or need support, we have 24x7 human-assisted chat support on WhatsApp/email (support@360bizhealth.com) and on calls (+91-8037834753).",
   },
   {
-    q: "How to buy/renew my group health insurance with Pazcare?",
-    a: "Write to us at marketing@pazcare.com or submit your work email and mobile number on our site. Our health insurance consultants will contact you and help you with the renewal process.",
+    q: "How to buy/renew my group health insurance with 360 Biz Health?",
+    a: "Write to us at marketing@360bizhealth.com or submit your work email and mobile number on our site. Our health insurance consultants will contact you and help you with the renewal process.",
   },
   {
-    q: "How does Pazcare make claiming insurance easier?",
-    a: "Pazcare offers 24/7 human support, easy digital submissions, and hands-on guidance so employees can confidently file their claims and get timely reimbursement.",
+    q: "How does 360 Biz Health make claiming insurance easier?",
+    a: "360 Biz Health offers 24/7 human support, easy digital submissions, and hands-on guidance so employees can confidently file their claims and get timely reimbursement.",
   },
 ];
 
@@ -286,7 +286,7 @@ export const footerColumns = [
   {
     title: "Company",
     links: [
-      "Pazcare Reviews",
+      "360 Biz Health Reviews",
       "Contact Us",
       "About Us",
       "Careers",
