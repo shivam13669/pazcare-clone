@@ -5,10 +5,10 @@ import { offerings } from "./site-data";
 const tabs: string[] = Object.keys(offerings);
 
 const cardTints = [
-  "bg-[oklch(0.93_0.05_150)]",
-  "bg-[oklch(0.91_0.03_255)]",
-  "bg-[oklch(0.94_0.06_95)]",
-  "bg-[oklch(0.92_0.03_20)]",
+  "bg-[linear-gradient(305deg,rgb(207,235,221),rgb(230,245,238))]",
+  "bg-[linear-gradient(305deg,rgb(217,231,253),rgb(235,243,254))]",
+  "bg-[linear-gradient(305deg,rgb(253,240,204),rgb(254,247,229))]",
+  "bg-[linear-gradient(305deg,rgb(248,217,215),rgb(252,236,234))]",
 ];
 
 export function Offerings() {
